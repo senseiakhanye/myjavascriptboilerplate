@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npm audit && nodemon buildScripts/staticServer.js"
+    "predev": "npm audit",
+    "dev": "nodemon buildScripts/staticServer.js -e html,json,js"
   },
   "repository": {
     "type": "git",
