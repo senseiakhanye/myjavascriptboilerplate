@@ -5,8 +5,6 @@ const app = express();
 const port = process.env.PORT || 3000;
 const srcFolder = path.join(__dirname, "../src/");
 
-console.log(srcFolder);
-
 app.use(express.static(srcFolder));
 
 app.listen(port, (err) => {
