@@ -1,0 +1,23 @@
+{
+  "name": "myjavascriptboilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/senseiakhanye/myjavascriptboilerplate.git"
+  },
+  "keywords": [],
+  "author": "Katleho A. Khanye",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/senseiakhanye/myjavascriptboilerplate/issues"
+  },
+  "homepage": "https://github.com/senseiakhanye/myjavascriptboilerplate#readme",
+  "devDependencies": {
+    "express": "^4.17.1"
+  }
+}
