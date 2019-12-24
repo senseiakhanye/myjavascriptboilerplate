@@ -11,9 +11,8 @@ const srcFolder = path.join(__dirname, "../src/");
 const compiler = webpack(config);
 
 app.use(webpackMiddleWare(compiler, {
-  noInfo: true,
   publicPath: config.output.publicPath
-}))
+}));
 
 app.use(express.static(srcFolder));
 
