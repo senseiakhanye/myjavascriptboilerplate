@@ -18,7 +18,7 @@ app.use(express.static(srcFolder));
 
 app.listen(port, (err) => {
   if (err != null) {
-    return console.log(chalk.red(`Error running port ${port} error message ${err}`));
+    return console.log(chalk.red(`Error running port ${port} error message ${err}`)); // eslint-disable-line no-console
   }
-  console.log(chalk.green(`Listening to port ${port}`));
+  console.log(chalk.green(`Listening to port ${port}`)); // eslint-disable-line no-console
 })

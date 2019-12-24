@@ -4,10 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "predev": "npm audit",
-    "dev": "babel-node buildScripts/staticServer.js",
+    "prebuildscript": "npm audit",
+    "buildscript": "babel-node buildScripts/staticServer.js",
+    "dev": "npm-run-all lint buildscript lint:watch",
     "babel": "babel-node buildScripts/staticServer.js",
     "share": "npm-run-all --parallel dev localtunnel",
+    "lint": "esw webpack.config.* src buildScripts --color",
+    "lint:watch": "npm run lint -- --watch",
     "localtunnel": "lt --port 3000"
   },
   "repository": {
@@ -30,6 +33,9 @@
     "babel-loader": "^8.0.6",
     "chalk": "^3.0.0",
     "css-loader": "^3.4.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-watch": "^6.0.1",
     "express": "^4.17.1",
     "localtunnel": "^2.0.0",
     "nodemon": "^2.0.2",
