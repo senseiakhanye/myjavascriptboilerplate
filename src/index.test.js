@@ -1,7 +1,11 @@
-import { expect } from 'chai';
-import jsdom from 'jsdom';
-import fs from 'fs';
+// import { expect } from 'chai';
+const { expect } = require('chai');
+const jsdom = require('jsdom');
+// import jsdom from 'jsdom';
+// import fs from 'fs';
+const fs = require('fs');
 const { JSDOM } = jsdom;
+import indexapi from './indexapi';
 
 describe("Index.html", () => {
   const indexHtml = fs.readFileSync('./src/index.html', "utf-8");
@@ -33,6 +37,15 @@ describe("Index.html", () => {
     const footerElement = dom.window.document.querySelector("footer");
     const exist = footerElement != null;
     expect(exist).is.equal(true);
+    done();
+  });
+
+  it('Should add one list item', (done) => {
+    const listElement = dom.window.document.querySelector("#names");
+    indexapi.addListItem(listElement, {firstName: "Test 1"});
+    indexapi.addListItem(listElement, {firstName: "Test 2"});
+    indexapi.addListItem(listElement, {firstName: "Test 3"});
+    expect(listElement.children.length).is.equal(3);
     done();
   });
 

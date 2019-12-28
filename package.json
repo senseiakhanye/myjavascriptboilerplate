@@ -40,6 +40,7 @@
     "eslint-plugin-import": "^2.19.1",
     "eslint-watch": "^6.0.1",
     "express": "^4.17.1",
+    "html-webpack-plugin": "^3.2.0",
     "jsdom": "^15.2.1",
     "localtunnel": "^2.0.0",
     "mocha": "^6.2.2",
@@ -52,6 +53,8 @@
     "webpack-md5-hash": "0.0.6"
   },
   "dependencies": {
-    "numeral": "^2.0.6"
+    "babel-polyfill": "^6.26.0",
+    "numeral": "^2.0.6",
+    "whatwg-fetch": "^3.0.0"
   }
 }
