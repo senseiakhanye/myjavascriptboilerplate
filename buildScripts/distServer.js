@@ -12,7 +12,7 @@ const srcFolder = path.join(__dirname, "../dist/");
 
 app.get('/users', (req, res) => {
   const jsonData = JSON.parse(fs.readFileSync(path.join(__dirname, "../src/api/db.json")).toString());
-  res.json(jsonData)
+  res.json(jsonData.users);
 });
 
 app.use(compression());

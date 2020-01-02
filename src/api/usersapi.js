@@ -1,5 +1,7 @@
+const baseUrl = require('./baseUrl');
+
 const getUser = async () => {
-  let result = await fetch("/users");
+  let result = await fetch(`${baseUrl}users`);
   return handleResult(result);
 }
 

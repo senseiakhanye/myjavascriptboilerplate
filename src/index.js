@@ -11,8 +11,7 @@ import indexapi from './indexapi';
 const fetchUser = () => {
   const ulElement = document.querySelector("#names");
   getUser().then( (data) => {
-    console.log(data);
-    data.users.forEach( (item) => {
+    data.forEach( (item) => {
       indexapi.addListItem(ulElement, item);
     })
   }).catch( (error) => {

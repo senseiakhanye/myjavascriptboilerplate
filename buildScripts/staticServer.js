@@ -17,8 +17,7 @@ app.use(webpackMiddleWare(compiler, {
 
 app.get('/users', (req, res) => {
   const jsonData = JSON.parse(fs.readFileSync(path.join(__dirname, "../src/api/db.json")).toString());
-  console.log(jsonData);
-  res.json(jsonData)
+  res.json(jsonData.users);
 });
 
 app.use(express.static(srcFolder));
