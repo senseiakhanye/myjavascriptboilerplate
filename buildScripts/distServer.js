@@ -1,26 +1,21 @@
 const express = require('express');
 const chalk = require('chalk');
 const path = require('path');
-const webpack = require('webpack');
-const config = require('../webpack.config.dev');
-const webpackMiddleWare = require('webpack-dev-middleware');
 const app = express();
 const fs = require('fs');
+const compression = require('compression');
 
 const port = process.env.PORT || 3000;
-const srcFolder = path.join(__dirname, "../src/");
-const compiler = webpack(config);
+const srcFolder = path.join(__dirname, "../dist/");
 
-app.use(webpackMiddleWare(compiler, {
-  publicPath: config.output.publicPath
-}));
+
 
 app.get('/users', (req, res) => {
   const jsonData = JSON.parse(fs.readFileSync(path.join(__dirname, "../src/api/db.json")).toString());
-  console.log(jsonData);
   res.json(jsonData)
 });
 
+app.use(compression());
 app.use(express.static(srcFolder));
 
 app.listen(port, (err) => {

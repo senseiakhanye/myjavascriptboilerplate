@@ -47,16 +47,6 @@ describe("Index.html", () => {
     indexapi.addListItem(listElement, {firstName: "Test 3"});
     expect(listElement.children.length).is.equal(3);
     done();
-  });
-
-  it('Must contain script referencing bundle.js', (done) => {
-    const scriptElement = dom.window.document.querySelector("script");
-    if (scriptElement == null) {
-      expect("Have script tag").is.equal("no script tag");
-    } else {
-      expect(scriptElement.src).is.equal("bundle.js");
-    }
-    done();
     dom.window.close();
   });
   // dom.window.close();
