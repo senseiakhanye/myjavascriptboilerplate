@@ -11,8 +11,16 @@ describe("Index.html", () => {
   const indexHtml = fs.readFileSync('./src/index.html', "utf-8");
   const dom = new JSDOM(indexHtml);
 
+  it('Should have container', (done) => {
+    const headerElement = dom.window.document.querySelector("body > .container");
+    headerElement === undefined;
+    const exist = headerElement != null;
+    expect(exist).is.equal(true);
+    done();
+  });
+
   it('Should contain header', (done) => {
-    const headerElement = dom.window.document.querySelector("body > header");
+    const headerElement = dom.window.document.querySelector(".container > header");
     headerElement === undefined;
     const exist = headerElement != null;
     expect(exist).is.equal(true);

@@ -21,7 +21,8 @@
     "prebuild": "npm-run-all clean-dist test lint",
     "build": "babel-node buildScripts/build.js",
     "postbuild": "babel-node buildScripts/distServer",
-    "predeploy": "npm-run-all clean-dist test lint",
+    "rebuild": "babel-node buildScripts/build.js",
+    "predeploy": "npm-run-all clean-dist test lint rebuild",
     "deploy": "surge ./dist doubtful-clam.surge.sh"
   },
   "repository": {

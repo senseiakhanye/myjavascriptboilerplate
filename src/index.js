@@ -11,8 +11,9 @@ import indexapi from './indexapi';
 const fetchUser = () => {
   const ulElement = document.querySelector("#names");
   getUser().then( (data) => {
-    data.forEach( (item) => {
+    data.every( (item) => {
       indexapi.addListItem(ulElement, item);
+      return true;
     })
   }).catch( (error) => {
     console.log(error); //eslint-disable-line no-console
