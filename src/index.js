@@ -1,4 +1,5 @@
 import './index.css';
+import logo from './media/sensei.png';
 import 'babel-polyfill';
 // const numeral = require('numeral');
 const getUser = require('./api/usersapi');
@@ -20,4 +21,9 @@ const fetchUser = () => {
   })
 }
 
+const addImage = () => {
+  document.querySelector(".logo").src = logo;
+}
+
 fetchUser();
+addImage();

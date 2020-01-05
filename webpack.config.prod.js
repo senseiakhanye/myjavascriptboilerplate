@@ -82,13 +82,19 @@ module.exports =  {
       // Properties you define here are available in index.html
       // using htmlWebpackPlugin.options.varName
       // trackJSToken: "INSERT YOUR TOKEN HERE"
+    }),
+
+    new HtmlWebpackPlugin({
+      template: "src/index.html",
+      filename: "aboutus.html"
     })
   ],
   module: {
     rules: [
       {test: /\.js$/, exclude: /node_modules/, loader: ['babel-loader']},
       // {test: /\.css$/, use: ['style-loader', 'css-loader']}
-      {test: /\.css$/i, use: [MiniCssExtractPlugin.loader, 'css-loader']}
+      {test: /\.css$/i, use: [MiniCssExtractPlugin.loader, 'css-loader']},
+      {test: /\.(png|svg|jpg|gif)$/, use: ['file-loader']}
     ]
   }
 }
