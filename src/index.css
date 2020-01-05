@@ -28,6 +28,16 @@ header > nav > div:nth-child(2) {
   width: 100%;
 }
 
+.form-line {
+  display: flex;
+  margin: 10px 2px;
+  flex-direction: column;
+}
+
+.form-line > input{
+  width: 100%;
+}
+
 .container {
   height: 100%;
   display: grid;
@@ -81,6 +91,20 @@ aside {
     background-color: green;
     grid-column: 1 / span 3;
   }
+
+  .form-line {
+    display: flex;
+    margin: 10px 2px;
+    flex-direction: row;
+  }
+
+  .form-line > label{
+    flex: 0 0 100px;
+  }
+
+  .form-line > input {
+    flex: 1 0 0;
+  }
 }
 
 @media screen and (min-width: 769px) {
@@ -102,5 +126,19 @@ aside {
     display: block;
     background-color: green;
     grid-column: 1 / 4;
+  }
+
+  .form-line {
+    display: flex;
+    margin: 10px 2px;
+    flex-direction: row;
+  }
+
+  .form-line > label{
+    flex: 0 0 100px;
+  }
+
+  .form-line > input {
+    flex: 1 0 0;
   }
 }

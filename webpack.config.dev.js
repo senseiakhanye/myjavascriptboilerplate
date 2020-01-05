@@ -28,6 +28,14 @@ module.exports =  {
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       inject: true
+    }),
+    new HtmlWebpackPlugin({
+      template: "src/index.html",
+      filename: "aboutus.html"
+    }),
+    new HtmlWebpackPlugin({
+      template: "src/register.html",
+      filename: "register.html"
     })
   ],
   module: {
