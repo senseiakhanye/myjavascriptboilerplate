@@ -1,5 +1,6 @@
 <html>
   <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Title</title>
   </head>
@@ -20,34 +21,106 @@
         Side Menu ...
       </aside>
       <main>
-        <div class="form-line">
-          <label>Name</label>
-          <input type="text" placeholder="Name" >
+        <div class="stayduration">
+          <div>
+            <label for="stayfrom">Stay from</label>
+            <input type="datetime-local" name="stayfrom" id="stayfrom">
+          </div>
+          <div>
+            <label for="stayto">to</label>
+            <input type="datetime-local" name="stayto" id="stayto">
+          </div>
         </div>
-        <div class="form-line">
-          <label>Surname</label>
-          <input type="text" placeholder="Surname" >
+        <div class="location">
+          <label for="location">Location</label>
+          <select name="location" id="location">
+            <optgroup label="England">
+              <option>Birmingham</option>
+              <option>Readin</option>
+            </optgroup>
+            <option value="Aberdeen, Scotland">Abardeen, Scotland</option>
+            <option value="Birmingham, England">Birmingham, England</option>
+            <option value="Reading, England">Reading, England</option>
+            <option value="Glasgrow, England">Glasgrow, Scotland</option>
+            <option value="London, England">London, England</option>
+            <option value="Leeds, England">Leeds, England</option>
+            <option value="Leicester, England">Leicester, England</option>
+            <option value="Belfast, Northern Ireland">Belfast, Northern Ireland</option>
+            <option value="Dundee, Scotland">Dundee, Scotland</option>
+            <option value="Edinburgh, Scotland">Edinburgh, Scotland</option>
+            <option value="Liverpool, England">Liverpool, England</option>
+          </select>
         </div>
-        <div class="form-line">
-          <label>Email</label>
-          <input type="email" placeholder="Email" >
+        <div class="additional">
+          <fieldset>
+            <legend>What additional activities do you want to book</legend>
+            <div class="additionaloptions">
+              <div class="oneoption">
+                <input type="checkbox" name="additional" value="Gym Access" id="gym">
+                <label for="gym">Gym Access</label>
+                <span>R 100</span>
+              </div>
+              <div class="oneoption">
+                <input type="checkbox" name="additional" value="Breakfast" id="breakfast">
+                <label for="breakfast">Breakfast</label>
+                <span>R 100</span>
+              </div>
+              <div class="oneoption">
+                <input type="checkbox" name="additional" value="Spa day" id="spa">
+                <label for="spa">Spar day</labe for="spa"l for="spa"> for="spa"
+                <span>R 500</span>
+              </div>
+              <div class="oneoption">
+                <input type="checkbox" name="additional" value="Spar day for two">
+                <label>Spar day for two</label>
+                <span>R 900</span>
+              </div>
+              <div class="oneoption">
+                <input type="checkbox" name="additional" value="Golf pass" id="golf">
+                <label for="golf">Golf pass</label>
+                <span>R 800</span>
+              </div>
+            </div>
+          </fieldset>
         </div>
-        <div class="form-line">
-          <label>Mobile</label>
-          <input type="number" placeholder="Mobile" >
+        <div class="specialrequestdiv">
+            <label>Special request</label>
+
         </div>
-        <div class="form-line">
-          <label>Date of Birth</label>
-          <input type="date" >
+        <div class="detailsdiv">
+          <h2>Your Details</h2>
+          <div class="onedetail">
+            <label for="name">Name</label>
+            <input type="text" placeholder="Name" name="name" id="name">
+          </div>
+          <div class="onedetail">
+            <label for="email">Email address</label>
+            <input type="text" placeholder="Email address" name="email" id="email">
+          </div>
+          <div class="onedetail">
+            <label for="telephone">Telephone Number</label>
+            <input type="text" placeholder="Telephone Number" name="telephone" id="telephone">
+          </div>
         </div>
-        <div class="form-line">
-          <label>Dependents</label>
-          <input type="range">
+        <div class="detailsdiv">
+          <h2>Payment</h2>
+          <div class="onedetail">
+            <label>Card type</label>
+            <input type="text" placeholder="Name" name="name">
+          </div>
+          <div class="onedetail">
+            <label>Card number</label>
+            <input type="number" placeholder="Email address" name="email">
+          </div>
+          <div class="onedetail">
+            <label>Telephone Number</label>
+            <input type="text" placeholder="Telephone Number" name="telephone">
+          </div>
         </div>
       </main>
       <footer>
         <nav>Footer menu here</nav>
       </footer>
-    </div>
+    </divc>
   </body>
 </html>

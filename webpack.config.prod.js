@@ -12,7 +12,8 @@ module.exports =  {
   devtool: 'source-map',
   entry: {
     vendor: path.resolve(__dirname, "src/vendor"),
-    main: path.resolve(__dirname, "src/index")
+    main: path.resolve(__dirname, "src/index"),
+    register: path.resolve(__dirname, "src/register/register")
   },
   target: 'web',
   resolve: {
@@ -86,11 +87,38 @@ module.exports =  {
 
     new HtmlWebpackPlugin({
       template: "src/index.html",
-      filename: "aboutus.html"
+      filename: "aboutus.html",
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true
+      },
+      inject: true
     }),
     new HtmlWebpackPlugin({
       template: "src/register.html",
-      filename: "register.html"
+      filename: "register.html",
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true
+      },
+      chunks: ['register', 'vendor'],
+      inject: true
     })
   ],
   module: {

@@ -5,9 +5,11 @@ const path = require('path');
 
 module.exports =  {
   devtool: 'inline-source-map',
-  entry: [
-    path.resolve(__dirname, 'src/index')
-  ],
+  entry: {
+    vendor: path.resolve(__dirname, "src/vendor"),
+    main: path.resolve(__dirname, "src/index"),
+    register: path.resolve(__dirname, "src/register/register")
+  },
   target: 'web',
   resolve: {
     extensions: ['*', '.js','.json']
@@ -16,7 +18,7 @@ module.exports =  {
   output: {
     path: path.resolve(__dirname, 'src'),
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
   plugins: [
     new webpack.LoaderOptionsPlugin({
@@ -27,15 +29,17 @@ module.exports =  {
     // Create HTML file that includes reference to bundled JS.
     new HtmlWebpackPlugin({
       template: 'src/index.html',
-      inject: true
+      inject: true,
+      chunks: ['name', 'vendor']
     }),
     new HtmlWebpackPlugin({
       template: "src/index.html",
-      filename: "aboutus.html"
+      filename: "aboutus.html",
     }),
     new HtmlWebpackPlugin({
       template: "src/register.html",
-      filename: "register.html"
+      filename: "register.html",
+      chunks: ['register', 'vendor']
     })
   ],
   module: {

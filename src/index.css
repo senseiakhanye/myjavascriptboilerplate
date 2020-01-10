@@ -28,16 +28,6 @@ header > nav > div:nth-child(2) {
   width: 100%;
 }
 
-.form-line {
-  display: flex;
-  margin: 10px 2px;
-  flex-direction: column;
-}
-
-.form-line > input{
-  width: 100%;
-}
-
 .container {
   height: 100%;
   display: grid;
@@ -71,6 +61,12 @@ aside {
   display: none;
 }
 
+.stayduration {
+  display: flex;
+  flex-direction: column;
+}
+
+
 @media screen and (min-width: 481px) {
   header {
     grid-column: 1 / -1;
@@ -79,6 +75,13 @@ aside {
   main {
     grid-column: 4 / -1;
     background-color: red;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main > div {
+    margin: 10px 0;
   }
 
   footer {
@@ -105,6 +108,15 @@ aside {
   .form-line > input {
     flex: 1 0 0;
   }
+
+  .stayduration {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .stayduration > div:nth-child(2) {
+    margin-left: 50px;
+  }
 }
 
 @media screen and (min-width: 769px) {
@@ -115,6 +127,13 @@ aside {
   main {
     grid-column: 4 / -1;
     background-color: red;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main > div {
+    margin: 10px 0;
   }
 
   footer {
@@ -128,17 +147,12 @@ aside {
     grid-column: 1 / 4;
   }
 
-  .form-line {
+  .stayduration {
     display: flex;
-    margin: 10px 2px;
     flex-direction: row;
   }
 
-  .form-line > label{
-    flex: 0 0 100px;
-  }
-
-  .form-line > input {
-    flex: 1 0 0;
+  .stayduration > div:nth-child(2) {
+    margin-left: 50px;
   }
 }
